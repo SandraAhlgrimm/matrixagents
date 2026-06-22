@@ -9,8 +9,11 @@ COPY frontend/ ./
 RUN npm run build
 
 # Stage 2: Build backend
-FROM maven:3.9-eclipse-temurin-21 AS backend-build
+FROM eclipse-temurin:25-jdk-noble AS backend-build
 WORKDIR /app
+
+# Install Maven
+RUN apt-get update && apt-get install -y maven && rm -rf /var/lib/apt/lists/*
 
 # Copy pom.xml and download dependencies
 COPY pom.xml ./
@@ -24,11 +27,11 @@ COPY src ./src
 RUN mvn package -DskipTests -B
 
 # Stage 3: Runtime
-FROM eclipse-temurin:21-jre-alpine
+FROM eclipse-temurin:25-jre-noble
 WORKDIR /app
 
 # Create non-root user for security
-RUN addgroup -g 1001 appgroup && adduser -u 1001 -G appgroup -D appuser
+RUN groupadd -g 1001 appgroup && useradd -u 1001 -g appgroup -M appuser
 
 # Copy the built JAR
 COPY --from=backend-build /app/target/*.jar app.jar
