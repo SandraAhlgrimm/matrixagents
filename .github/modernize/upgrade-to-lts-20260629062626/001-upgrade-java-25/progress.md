@@ -1,0 +1,132 @@
+# Upgrade Progress: matrix-agents-showcase (20260629062831)
+
+- **Started**: 2026-06-29
+- **Plan Location**: `.github/modernize/upgrade-to-lts-20260629062626/001-upgrade-java-25/plan.md`
+- **Total Steps**: 5
+
+## Step Details
+
+- **Step 1: Setup Environment**
+  - **Status**: ✅ Completed
+  - **Changes Made**:
+  - **Review Code Changes**:
+    - Sufficiency: 
+    - Necessity: 
+  - **Verification**:
+    - Command: 
+    - JDK: 
+    - Build tool: 
+    - Result: 
+    - Notes: 
+  - **Deferred Work**: None
+  - **Commit**: N/A
+
+- **Step 2: Setup Baseline**
+  - **Status**: ✅ Completed
+  - **Changes Made**:
+  - **Review Code Changes**:
+    - Sufficiency: ✅ Read-only step
+    - Necessity: ✅ Read-only step
+  - **Verification**:
+    - Command: 
+    - JDK: 
+    - Build tool: 
+    - Result: 
+    - Notes: 
+  - **Deferred Work**: None
+  - **Commit**: N/A
+
+- **Step 3: Upgrade Java Version in pom.xml and Dockerfile**
+  - **Status**: ✅ Completed
+  - **Changes Made**:
+    - pom.xml: java.version 21 → 25
+    - Dockerfile stage 2: maven:3.9-eclipse-temurin-21 → maven:3.9-eclipse-temurin-25
+    - Dockerfile stage 3: eclipse-temurin:21-jre-alpine → eclipse-temurin:25-jre-alpine
+  - **Review Code Changes**:
+    - Sufficiency: ✅ All required changes present
+    - Necessity: ✅ All changes necessary
+      - Functional Behavior: ✅ Preserved
+      - Security Controls: ✅ Preserved
+  - **Verification**:
+    - Command: `mvn clean test-compile -q`
+    - JDK: /usr/lib/jvm/temurin-25-jdk-amd64/bin
+    - Build tool: /usr/share/apache-maven-3.9.16/bin/mvn
+    - Result: ✅ Compilation SUCCESS
+    - Notes: No test sources present
+  - **Deferred Work**: None
+  - **Commit**: bf9ae65 - Step 3: Upgrade Java Version to 25 - Compile: SUCCESS
+  - **Changes Made**:
+  - **Review Code Changes**:
+    - Sufficiency: 
+    - Necessity: 
+      - Functional Behavior: 
+      - Security Controls: 
+  - **Verification**:
+    - Command: 
+    - JDK: 
+    - Build tool: 
+    - Result: 
+    - Notes: 
+  - **Deferred Work**: None
+  - **Commit**: 
+
+- **Step 4: CVE Validation & Fix**
+  - **Status**: ✅ Completed
+  - **Changes Made**: No CVEs found; no changes needed
+  - **Review Code Changes**:
+    - Sufficiency: ✅ All direct deps scanned
+    - Necessity: ✅ No changes needed
+  - **Verification**:
+    - Command: validate-cves-for-java
+    - JDK: /usr/lib/jvm/temurin-25-jdk-amd64/bin
+    - Build tool: /usr/share/apache-maven-3.9.16/bin/mvn
+    - Result: ✅ No CVEs found
+    - Notes: 11 direct dependencies scanned
+  - **Deferred Work**: None
+  - **Commit**: N/A
+  - **Changes Made**:
+  - **Review Code Changes**:
+    - Sufficiency: 
+    - Necessity: 
+  - **Verification**:
+    - Command: 
+    - JDK: 
+    - Build tool: 
+    - Result: 
+    - Notes: 
+  - **Deferred Work**: None
+  - **Commit**: N/A
+
+- **Step 5: Final Validation**
+  - **Status**: ✅ Completed
+  - **Changes Made**: No additional changes needed
+  - **Review Code Changes**:
+    - Sufficiency: ✅ All required changes present
+    - Necessity: ✅ All changes necessary
+      - Functional Behavior: ✅ Preserved
+      - Security Controls: ✅ Preserved
+  - **Verification**:
+    - Command: `mvn clean test`
+    - JDK: /usr/lib/jvm/temurin-25-jdk-amd64/bin
+    - Build tool: /usr/share/apache-maven-3.9.16/bin/mvn
+    - Result: ✅ BUILD SUCCESS | javac release 25 | No tests to run
+    - Notes: 22 source files compiled with javac [debug parameters release 25]
+  - **Deferred Work**: None
+  - **Commit**: bf9ae65 (same commit as Step 3)
+  - **Changes Made**:
+  - **Review Code Changes**:
+    - Sufficiency: 
+    - Necessity: 
+  - **Verification**:
+    - Command: 
+    - JDK: 
+    - Build tool: 
+    - Result: 
+    - Notes: 
+  - **Deferred Work**: None
+  - **Commit**: 
+
+---
+
+## Notes
+
