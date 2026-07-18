@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Upgrade plan to migrate project to Java 25",
+  "tasks": [
+    {
+      "type": "upgrade",
+      "id": "001-upgrade-java",
+      "description": "Upgrade to Java 25",
+      "reason": "Migrate the project to Java 25, the latest LTS release, to benefit from new language features, performance improvements, and long-term support.",
+      "requirements": "Upgrade the JDK/Java version to 25. Update build configuration (pom.xml or build.gradle) to target Java 25. Resolve any compilation errors or deprecation warnings introduced by the Java 25 upgrade. Ensure all existing unit tests continue to pass.",
+      "skills": [
+        {
+          "name": "java-version-upgrade",
+          "location": "builtin"
+        }
+      ],
+      "successCriteria": {
+        "passBuild": "true",
+        "passUnitTests": "true"
+      },
+      "status": "success",
+      "summary": "Upgraded the Java version from 21 to 25 in pom.xml by changing <java.version>21</java.version> to <java.version>25</java.version>. The project uses Spring Boot 4.0.1 with Maven 3.9.16, both fully compatible with Java 25 (Temurin 25.0.3 LTS). Build compiled successfully and tests passed. No CVEs found in direct dependencies.",
+      "successCriteriaStatus": {
+        "passBuild": true,
+        "passUnitTests": true
+      }
+    }
+  ],
+  "metadata": {
+    "planName": "upgrade-to-lts-20260718043607",
+    "projectName": "matrixagents",
+    "language": "java",
+    "createdAt": "2026-07-18T04:36:10.960Z",
+    "version": "1.0"
+  }
+}
