@@ -1166,3 +1166,44 @@
 2026-07-30T04:49:54.333Z [INFO] [MavenBuildTool] Searching for pom.xml files in /home/runner/work/matrixagents/matrixagents
 2026-07-30T04:49:54.333Z [INFO] [MavenBuildTool] Found pom.xml files: /home/runner/work/matrixagents/matrixagents/pom.xml
 2026-07-30T04:49:54.333Z [INFO] [MavenBuildTool] Java version found in /home/runner/work/matrixagents/matrixagents/pom.xml: 25
+2026-07-30T04:50:11.991Z [INFO] ----------------------invoke appmod-report-event----------------------
+2026-07-30T04:50:11.991Z [INFO] [Tool.invoke]({name: appmod-report-event, modelId: mcp-client, input: {
+  "sessionId": "20260730044632",
+  "projectPath": "/home/runner/work/matrixagents/matrixagents",
+  "event": "upgradeValidationCompleted",
+  "status": "succeeded",
+  "phase": "execute",
+  "details": {}
+}}).
+2026-07-30T04:50:11.991Z [INFO] [Tool.invoke] do invoke.
+2026-07-30T04:50:11.991Z [INFO] [Tool.invoke]({result: {
+  "message": "Event 'upgradeValidationCompleted' reported!\nSession ID: 20260730044632,\nSession Dir: /home/runner/work/matrixagents/matrixagents/.github/modernize/java-upgrade/20260730044632"
+}}).
+2026-07-30T04:50:11.991Z [INFO] ----------------------invoked appmod-report-event----------------------
+2026-07-30T04:50:15.554Z [INFO] ----------------------invoke appmod-report-event----------------------
+2026-07-30T04:50:15.554Z [INFO] [Tool.invoke]({name: appmod-report-event, modelId: mcp-client, input: {
+  "sessionId": "20260730044632",
+  "projectPath": "/home/runner/work/matrixagents/matrixagents",
+  "event": "planExecutionCompleted",
+  "status": "succeeded",
+  "phase": "execute"
+}}).
+2026-07-30T04:50:15.554Z [INFO] [Tool.invoke] do invoke.
+2026-07-30T04:50:15.555Z [INFO] [Tool.invoke]({result: {
+  "message": "Event 'planExecutionCompleted' reported!\nSession ID: 20260730044632,\nSession Dir: /home/runner/work/matrixagents/matrixagents/.github/modernize/java-upgrade/20260730044632"
+}}).
+2026-07-30T04:50:15.555Z [INFO] ----------------------invoked appmod-report-event----------------------
+2026-07-30T04:50:31.188Z [INFO] ----------------------invoke appmod-report-event----------------------
+2026-07-30T04:50:31.188Z [INFO] [Tool.invoke]({name: appmod-report-event, modelId: mcp-client, input: {
+  "sessionId": "20260730044632",
+  "projectPath": "/home/runner/work/matrixagents/matrixagents",
+  "event": "summaryGenerated",
+  "status": "succeeded",
+  "phase": "summarize",
+  "message": "Successfully upgraded matrix-agents-showcase from Java 21 to Java 25. Updated pom.xml java.version and Dockerfile base images. BUILD SUCCESS with no CVEs found."
+}}).
+2026-07-30T04:50:31.188Z [INFO] [Tool.invoke] do invoke.
+2026-07-30T04:50:31.188Z [INFO] [Tool.invoke]({result: {
+  "message": "Event 'summaryGenerated' reported!\nSession ID: 20260730044632,\nSession Dir: /home/runner/work/matrixagents/matrixagents/.github/modernize/java-upgrade/20260730044632"
+}}).
+2026-07-30T04:50:31.188Z [INFO] ----------------------invoked appmod-report-event----------------------
