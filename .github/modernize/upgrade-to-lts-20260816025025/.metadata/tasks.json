@@ -18,7 +18,12 @@
         "passBuild": "true",
         "passUnitTests": "true"
       },
-      "status": "started"
+      "status": "success",
+      "summary": "Successfully upgraded the project from Java 21 to Java 25 LTS. Updated pom.xml java.version from 21 to 25, and updated Dockerfile base images to eclipse-temurin:25. No source code changes required. Build and all unit tests pass under Java 25.",
+      "successCriteriaStatus": {
+        "passBuild": true,
+        "passUnitTests": true
+      }
     }
   ],
   "metadata": {
