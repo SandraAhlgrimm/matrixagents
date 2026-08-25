@@ -9,7 +9,7 @@ COPY frontend/ ./
 RUN npm run build
 
 # Stage 2: Build backend
-FROM maven:3.9-eclipse-temurin-21 AS backend-build
+FROM maven:3.9-eclipse-temurin-25 AS backend-build
 WORKDIR /app
 
 # Copy pom.xml and download dependencies
@@ -24,7 +24,7 @@ COPY src ./src
 RUN mvn package -DskipTests -B
 
 # Stage 3: Runtime
-FROM eclipse-temurin:21-jre-alpine
+FROM eclipse-temurin:25-jdk-alpine
 WORKDIR /app
 
 # Create non-root user for security
